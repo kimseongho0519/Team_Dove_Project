@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "ko">
+
+<head>
+    <meta charset-"UTF-8">
+    <title>{% block head_title %}Home{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href= "{% static 'main/css/main.css' %}"/>
+    <noscript><link rel="stylesheet" href="{% static 'main/css/noscript.css' %}" /></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/4637521f83.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@300&family=Black+Ops+One&family=Cinzel:wght@700;800;900&family=Gowun+Dodum&family=Limelight&family=MuseoModerno:wght@100;300;900&family=Noto+Serif+KR:wght@500&family=Raleway:wght@300&family=Slabo+27px&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'main/header.html' %}
+    {% include 'main/banner.html' %}
+    
+    <h1>hello</h1>
+    
+    {% for grain in grains %}
+        <h4>{{ grain.날짜 }}</h4>
+        <h4>{{ grain.곡류 }}</h4>
+    {% endfor%}
+
+    {% block chart_area %}
+    {% endblock %}
+    {% include 'main/two.html' %}
+    {% include 'main/four.html' %}
+    {% include 'main/five.html' %}
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script defer src ="{% static 'main/js/chart.js' %}"></script>
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'main/js/browser.min.js' %}"></script>
+    <script src="{% static 'main/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'main/js/util.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>
