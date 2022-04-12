@@ -149,7 +149,7 @@ input, select, textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		letter-spacing: -0.025em;
-		font-family: 'Noto Serif KR', serif;
+
 	}
 
 	h3 {
@@ -2260,7 +2260,7 @@ input, select, textarea {
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.3)' /%3E%3C/svg%3E");
+		background-image: ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.3)' /%3E%3C/svg%3E");
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
@@ -2950,7 +2950,7 @@ input, select, textarea {
 	}
 
 		.goto-next:before {
-			/*background-image: url("images/arrow.svg");*/
+			background-image: url("../images/arrow.svg");
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -3204,8 +3204,13 @@ input, select, textarea {
 		.wrapper.style2 {
 			background: #e44c65;
 		}
+		.wrapper.style2 div {
+			/* float: left; */
+			/* border: 1px solid black; */
+			/* float: left; width: 33%; */
+		}
 
-			.wrapper.style2 input[type="text"]:focus,
+			/* .wrapper.style2 input[type="text"]:focus,
 			.wrapper.style2 input[type="password"]:focus,
 			.wrapper.style2 input[type="email"]:focus,
 			.wrapper.style2 select:focus,
@@ -3257,7 +3262,7 @@ input, select, textarea {
 				.wrapper.style2 input[type="button"].primary:active,
 				.wrapper.style2 .button.primary:active {
 					background-color: rgba(255, 255, 255, 0.25) !important;
-				}
+				} */
 
 		.wrapper.fade-down > .container {
 			-moz-transform: translate(0,0);
@@ -3381,7 +3386,7 @@ input, select, textarea {
 		height: 3.5em;
 		left: 0;
 		line-height: 3.5em;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		width: 100%;
 		z-index: 100;
@@ -3451,28 +3456,134 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
+		background-image: url('../images/img6.png');
 		background-attachment: fixed;
-		background-color: #272833;
-		background-image: url("/main/images/img6.png");
 		background-position: center center;
 		background-size: cover;
-		box-shadow: 0 0.25em 0.5em 0 rgba(230, 220, 220, 0.25);
+		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
 		min-height: 100vh;
 		position: relative;
 		text-align: center;
-		z-index: 21;		
+		z-index: 21;
+		border: 3px solid while;
 	}
 
-		#banner:before {
-			content: '';
-			display: inline-block;
-			height: 100vh;
-			vertical-align: middle;
-			width: 1%;
-			border: #ffffff;
-			
+	/* #banner .main-text{
+		width: 100%;
+		height: 100%;		
+		border: 1px rgb(255, 238, 0) solid;
+		position: absolute;
+	
+		
+	} */
+	
+
+	#banner .main-text #a_box1{
+		width: 220px;
+		height: 180px;			
+		display: inline-block;
+		position:  absolute;		
+		left: 50%; 
+		top: 50%; 
+		transform: translate(-220%, -140%);	
+	}
+
+
+	#banner .main-text #a_box1 p {
+		text-align: center;
+		font-size: 180px;
+		font-family: 'Cafe24Ohsquare';
+		padding: 50px 0px 50px;
+		margin: auto;
+		color: #dfe3f1;
+		
+	}
+
+
+	#banner .main-text #b_box2 {
+		width: 300px;
+		height: 80px;			
+		display: inline-block;
+		position: absolute;
+		bottom: 25%;
+		left: 50%; 
+		top: 50%; 
+		transform: translate(14%, -170%);	
+	}
+
+
+	#banner .main-text #b_box2 p {
+		text-align: center;
+		font-size: 80px;
+		font-family: 'Cafe24Ohsquare';
+		padding: 50px 0px 50px;
+		color: #f59292;
+		
+	}
+
+	
+	#banner .main-text #c_box3 {
+		width: 300px;
+		height: 80px;	
+		
+		display: inline-block;
+		position: absolute;
+		bottom: 25%;
+		left: 50%; 
+		top: 50%; 
+		transform: translate(-40%, 50%);	
+	}
+
+
+	#banner .main-text #c_box3 p {
+		text-align: center;
+		font-size: 80px;
+		font-family: 'Cafe24Ohsquare';
+		padding: 50px 0px 50px;
+		color:  #f59292;
+		
+	}
+
+
+	#banner .main-text #c_box4 {
+		width: 750px;
+		height: 100px;	
+	
+		position: relative;		
+		left: 50%; 
+		top: 0%; 
+		transform: translate(-45%, -50%);
+		align-content: center;
+		
+	}
+
+
+
+	#banner .main-text #c_box4 p {
+		text-align: center;
+		font-size: 60px;
+		font-family: 'ROKA';		
+		display: flex;
+		justify-content: center;
+		position: relative;
+		color:  #dfe3f1;
+		
+	}
+
+
+
+
+	#banner:before {
+		content: '';
+		display: inline-block;
+		height: 100vh;
+		vertical-align: middle;
+		width: 1%;
+		border: 3px solid while;
 		}
 
+
+	
 		#banner:after {
 			/*background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
@@ -3482,93 +3593,39 @@ input, select, textarea {
 			display: block;
 			height: 100%;
 			left: 0;
-			position: absolute;
+			position: relative;
 			top: 0;
 			width: 100%;
+			border: 3px solid while;
 		}
 
-		#banner .content {			
+		#banner .content {		
+		
 			display: inline-block;
-			height :40vh;
-			width: 80vh;
-			padding: 5em;
+			margin-right: 1%;		
+			padding: 6em;
 			position: relative;
-			text-align: center;
+			text-align: right;
 			vertical-align: middle;
 			z-index: 1;
-			color: aliceblue;		
-			margin-bottom: 20em;	
-			background-position: center;
-	
+			border: soild 1px while;
+		
 		}
-
-		#banner .content .b_box {
-			height :30vh;
-			width: 80vh;
-			background-color: #ffffff;
-			border-radius: 20px 20px 20px 20px;
-			box-shadow: #383838 8px;
-			position: relative;
-			opacity: 0.3;
-		}
-
-
 
 			#banner .content header {
+				display: inline-block;
 				vertical-align: middle;
-				height: 100%;
-				width: 100%;
-				color:rgba(214, 217, 238, 0.95);
-				position: absolute;
-				left : 0em;
-			    top : 0em;
 			}
 
-			
-			#banner .content header .team {
-				font-family: 'Gowun Dodum', sans-serif;
-				font-size: 1.4em;
-				color:#000000;
-				position: 
-				relative;
-				text-align: center;
-				top: 1.3em;	
-				padding-bottom: 60px;		
-			}
-
-					#banner .content header .title {
-					
-						font-family:'Big Shoulders Inline Text', cursive;
-						font-size: 8em;
-						color:#eb3737;
-						position: 
-						relative;
-						text-align: center;				
-					}
-
-
-					#banner .content header h1 {				bottom: 2.5em;
-						font-family: 'Noto Serif KR', serif;
-						font-size: 3.5em;
-						color:#fa1919;
-						text-align: center;
-						position: relative;
-						
-					}
-			
-				#banner .content ul.actions1 {
-					-moz-justify-content: center;
-					-webkit-justify-content: center;
-					-ms-justify-content: center;
-					justify-content: center;
-					width: 100%;
-					margin-left: 0;
+				#banner .content header h2 {
+					font-size: 2.5em;
+					margin: 0;
 				}
 
-				.spotlight .content ul.actions1 li:first-child {
-					padding-left: 0;
-					}
-
+				#banner .content header p {
+					margin: 0.5em 0 0 0;
+					top: 0;
+				}
 
 			#banner .content .image {
 				border-radius: 100%;

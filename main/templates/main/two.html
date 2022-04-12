@@ -1,27 +1,19 @@
-<link rel="stylesheet" href="/main/static/main/css/main.css" />
 <!-- Two -->
-<section id="two" class="spotlight style2 right">
-    <span class="image fit main"><img src="images/main3.png" alt="2번째 페이지"/></span>
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="{% static 'main/js/chart.js' %}"></script>
+
+
+<section id="two" class="spotlight style3 left">
+    <span class="image fit main bottom"><canvas id="aluminium"></canvas> </span>
     <div class="content">
         <header>
-            <h2>김성호</h2>
-            <p><프론트엔드 개발자></p>
-
-                <p>Technology Stack(s)</p>
-                <ul>
-                    <li> HTML/CSS/JS </li>
-                    <li> Python </li>
-                    <li> django </li>
-                    <li> DB </li>
-                </ul>
+            <h2>전쟁으로 인한 생활 속 변화</h2>
+            <p>전쟁 피해로 인한 간접적인 영향이 무엇인지 알아봅니다</p>
         </header>
-        <p>안녕하세요. 김성호입니다.<br>
-            이번 k-디지털트레이닝을 통해,<br>
-            프론트엔드의 필요한 기술들과<br>
-            문제해결 능력을 키워나가겠습니다.<br>
-        </p>
+        <p>곡류, 기름, 광물의 가격 변동 흐름이 어떻게 변하는지 그래프로 표현</p>
         <ul class="actions">
-            <li><a href="/bigData/my/index.html" class="button">Detail</a></li>
+            <li><a href="chart/" class="button">Details</a></li>
         </ul>
     </div>
     <a href="#three" class="goto-next scrolly">Next</a>

@@ -1,19 +1,22 @@
+{% load static %}
+{% block content %}
 <header id="header">
-    <h1 id="logo"><a href="index.html">Landed</a></h1>
+    <h1 id="logo"><a href="{% url 'home' %}">Dove</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li>
                 <a href="#">Team Members</a>
                 <ul>
-                    <li><a href="/member/member1/index.html">Kim Seongho</a></li>
-                    <li><a href="/member/member2/index.html">Park Joonyoung</a></li>
-                    <li><a href="/member/member3/index.html">Seo Songhee</a></li>
-                    <li><a href="/member/member4/index.html">Han Ho</a></li>
+                    <li><a href="">Kim Seongho</a></li>
+                    <li><a href="#">Park Joonyoung</a></li>
+                    <li><a href="#">Seo Songhee</a></li>
+                    <li><a href="#">Han Ho</a></li>
                 
                 </ul>
             </li>							
-            <li><a href="#" class="button primary">Sign Up</a></li>
+            <li><a href="#" class="button primary">Chart</a></li>
         </ul>
     </nav>
 </header>
+{% endblock %}

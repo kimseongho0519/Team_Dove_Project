@@ -12,13 +12,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/4637521f83.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@300&family=Black+Ops+One&family=Cinzel:wght@700;800;900&family=Gowun+Dodum&family=Limelight&family=MuseoModerno:wght@100;300;900&family=Noto+Serif+KR:wght@500&family=Raleway:wght@300&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Healthset/HealthsetGothic.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/vitro/VitroCore.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/sandbox/SBAggro.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Ohsquare/Cafe24Ohsquare.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/armynuri/ROKA.css" rel="stylesheet">
+
 </head>
 
-<body>
-    {% include 'main/header.html' %}
-    {% include 'main/banner.html' %}
-    
-    <h1>hello</h1>
+
+<body class="is-preload landing">
+    <div id="page-wrapper">
+        {% include 'main/header.html' %}
+        {% include 'main/banner.html' %}
+        {% include 'main/one.html' %}
+        {% include 'main/two.html' %}
+        {% include 'main/three.html' %}
+        {% include 'main/four.html' %}
+        {% include 'main/five.html' %}
+        {% include 'main/footer.html' %}
+    </div>
+
     
     {% for grain in grains %}
         <h4>{{ grain.날짜 }}</h4>
@@ -27,9 +42,7 @@
 
     {% block chart_area %}
     {% endblock %}
-    {% include 'main/two.html' %}
-    {% include 'main/four.html' %}
-    {% include 'main/five.html' %}
+    
     
 
 
