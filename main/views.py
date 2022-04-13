@@ -3,9 +3,15 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Aluminium, Grain
 import pymysql
+
+# class MainList(ListView):
+#     model = Grain
+#     templat_name = 'main/home.html'
+
 def Homepage(request) :
-    db = pymysql.connect(host='15.164.233.32', port=3306, user='2h', passwd='Kingdra100!', db='project_one', charset='utf8')
+    db = pymysql.connect(host='15.164.171.72', port=3306, user='joy', passwd='Ghfkddl~1283', db='project_one', charset='utf8')
     cur = db.cursor()
+
     with db :
         cur.execute("SELECT 날짜,곡류,open,close FROM grain WHERE 곡류 like '밀'")
         wheat = cur.fetchall()
@@ -27,6 +33,9 @@ def Homepage(request) :
         monthly_grain = cur.fetchall()
         cur.execute("SELECT * FROM monthly_oversea_oil")
         monthly_oversea_oil = cur.fetchall()
+        cur.execute("SELECT * FROM monthly_mineral")
+        monthly_mineral = cur.fetchall()
+
     return render(request,"main/home.html",{
         "title" : "곡류 가격 변동",
         "grain1" : "밀",
@@ -41,11 +50,14 @@ def Homepage(request) :
         "monthly_al" : monthly_al,
         "monthly_domestic_oil" : monthly_domestic_oil,
         "monthly_grain" : monthly_grain,
-        "monthly_oversea_oil" : monthly_oversea_oil
+        "monthly_oversea_oil" : monthly_oversea_oil,
+         "monthly_mineral" : monthly_mineral
     })
+
 def chart_bar(request):
-    db = pymysql.connect(host='15.164.233.32', port=3306, user='2h', passwd='Kingdra100!', db='project_one', charset='utf8')
+    db = pymysql.connect(host='15.164.171.72', port=3306, user='joy', passwd='Ghfkddl~1283', db='project_one', charset='utf8')
     cur = db.cursor()
+
     with db :
         cur.execute("SELECT 날짜,곡류,open,close FROM grain WHERE 곡류 like '밀'")
         wheat = cur.fetchall()
@@ -59,6 +71,10 @@ def chart_bar(request):
         oversea_oil = cur.fetchall()
         cur.execute("SELECT * FROM aluminium")
         aluminium = cur.fetchall()
+        cur.execute("SELECT * FROM mineral")
+        mineral = cur.fetchall()
+        
+
     return render(request,"main/chart.html",{
         "title" : "곡류 가격 변동",
         "grain1" : "밀",
@@ -69,11 +85,14 @@ def chart_bar(request):
         "corn" : corn,
         "domestic_oil" : domestic_oil,
         "oversea_oil" : oversea_oil,
-        "aluminium" : aluminium
+        "aluminium" : aluminium,
+        "mineral" : mineral
     })
+
 def monthly_chart(request):
-    db = pymysql.connect(host='15.164.233.32', port=3306, user='2h', passwd='Kingdra100!', db='project_one', charset='utf8')
+    db = pymysql.connect(host='15.164.171.72', port=3306, user='joy', passwd='Ghfkddl~1283', db='project_one', charset='utf8')
     cur = db.cursor()
+
     with db :
         cur.execute("SELECT * FROM monthly_al")
         monthly_al = cur.fetchall()
@@ -83,10 +102,18 @@ def monthly_chart(request):
         monthly_grain = cur.fetchall()
         cur.execute("SELECT * FROM monthly_oversea_oil")
         monthly_oversea_oil = cur.fetchall()
+        cur.execute("SELECT * FROM monthly_mineral")
+        monthly_mineral = cur.fetchall()
+
     return render(request,"main/monthly_chart.html",{
         "monthly_al" : monthly_al,
         "monthly_domestic_oil" : monthly_domestic_oil,
         "monthly_grain" : monthly_grain,
-        "monthly_oversea_oil" : monthly_oversea_oil
+        "monthly_oversea_oil" : monthly_oversea_oil,
+        "monthly_mineral" : monthly_mineral
     })
+
+
+class GrainList(ListView):
+    model = Grain
 

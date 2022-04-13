@@ -1,11 +1,11 @@
 <!-- Two -->
 {% load static %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-<script src="{% static 'main/js/chart.js' %}"></script>
 
-
-<section id="two" class="spotlight style3 left">
-    <span class="image fit main bottom"><canvas id="aluminium"></canvas> </span>
+{% comment %} <section id="two" class="spotlight style3 left"> {% endcomment %}
+<section id="two" class = "spotlight style3 left">
+    <div class = "monthly_chart">
+        {% include 'main/monthly_chart.html' %}
+    </div>
     <div class="content">
         <header>
             <h2>전쟁으로 인한 생활 속 변화</h2>

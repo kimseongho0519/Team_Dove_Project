@@ -1,0 +1,26 @@
+section.monthly_charts{
+    height: 50vh;
+}
+
+.charts{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+.charts2{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+
+@media screen and (max-width: 980px) {
+    .charts{
+        flex-wrap: none;
+    }
+    .charts2{
+        flex-wrap:inherit;
+        position: absolute;
+    }
+}

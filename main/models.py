@@ -88,3 +88,28 @@ class OverseaOil(models.Model):
     class Meta:
         managed = False
         db_table = 'oversea_oil'
+
+class Mineral(models.Model):
+    날짜 = models.DateField(blank=True, null=True)
+    알루미늄 = models.FloatField(blank=True, null=True)
+    니켈 = models.FloatField(blank=True, null=True)
+    동 = models.FloatField(blank=True, null=True)
+    아연 = models.FloatField(blank=True, null=True)
+    주석 = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'mineral'
+
+
+class MonthlyMineral(models.Model):
+    날짜 = models.TextField(blank=True, null=True)
+    알루미늄 = models.FloatField(blank=True, null=True)
+    니켈 = models.FloatField(blank=True, null=True)
+    동 = models.FloatField(blank=True, null=True)
+    아연 = models.FloatField(blank=True, null=True)
+    주석 = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'monthly_mineral'

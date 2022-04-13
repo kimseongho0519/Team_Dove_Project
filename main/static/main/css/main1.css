@@ -149,6 +149,7 @@ input, select, textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		letter-spacing: -0.025em;
+
 	}
 
 	h3 {
@@ -2151,6 +2152,7 @@ input, select, textarea {
 
 	section.special, article.special {
 		text-align: center;
+		
 	}
 
 	header p {
@@ -2190,7 +2192,7 @@ input, select, textarea {
 			content: '';
 			display: inline-block;
 			height: 0.2em;
-			max-width: 20em;
+			/* max-width: 20em; */
 			width: 75%;
 		}
 
@@ -2259,7 +2261,7 @@ input, select, textarea {
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.3)' /%3E%3C/svg%3E");
+		background-image: ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.3)' /%3E%3C/svg%3E");
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
@@ -2949,7 +2951,7 @@ input, select, textarea {
 	}
 
 		.goto-next:before {
-			background-image: url("images/arrow.svg");
+			background-image: url("../images/arrow.svg");
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -3058,7 +3060,7 @@ input, select, textarea {
 
 		.spotlight:before {
 			/*background-image: url("images/overlay.png");*/
-			/* content: ''; */
+			content: '';
 			display: block;
 			height: 100%;
 			left: 0;
@@ -3143,15 +3145,11 @@ input, select, textarea {
 		}
 
 		.spotlight.style2 .content {
-			border-color: #5480f1;
+			border-color: purple;
 		}
 
 		.spotlight.style3 .content {
 			border-color: #39c088;
-		}
-
-		.monthly_chart{
-			margin-left : 35%;
 		}
 
 		.spotlight.inactive .content {
@@ -3203,12 +3201,21 @@ input, select, textarea {
 	.wrapper {
 		padding: 6em 0 4em 0;
 	}
-
+	.wrapper name h2{
+		display: flex;
+	}
 		.wrapper.style2 {
 			background: #e44c65;
 		}
+		.wrapper.style2 div {
+			text-align: margin 0 auto;
+		}
+		.wrapper.style2 div h1 {
+			font-size: 30px;
+			text-align: center;
+		}
 
-			.wrapper.style2 input[type="text"]:focus,
+			/* .wrapper.style2 input[type="text"]:focus,
 			.wrapper.style2 input[type="password"]:focus,
 			.wrapper.style2 input[type="email"]:focus,
 			.wrapper.style2 select:focus,
@@ -3260,7 +3267,7 @@ input, select, textarea {
 				.wrapper.style2 input[type="button"].primary:active,
 				.wrapper.style2 .button.primary:active {
 					background-color: rgba(255, 255, 255, 0.25) !important;
-				}
+				} */
 
 		.wrapper.fade-down > .container {
 			-moz-transform: translate(0,0);
@@ -3454,7 +3461,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background-image: url('../images/img6.jpg');
+		background-image: url('../images/img6.png');
 		background-attachment: fixed;
 		background-position: center center;
 		background-size: cover;
@@ -3737,7 +3744,6 @@ input, select, textarea {
 				padding: 4.5em 2.5em;
 				width: 25em;
 			}
-			
 
 		/* Wrapper */
 
@@ -3764,14 +3770,6 @@ input, select, textarea {
 			}
 
 	}
-
-	@media screen and (max-width: 1110px){
-		.monthly_chart{
-			margin-left : 40%;
-		}
-	}
-		
-
 
 /* Medium */
 
@@ -3826,10 +3824,6 @@ input, select, textarea {
 
 				.spotlight .goto-next {
 					display: none;
-				}
-
-				.monthly_chart{
-					margin-left : 0;
 				}
 
 		/* Wrapper */
@@ -3947,10 +3941,7 @@ input, select, textarea {
 					border-top-width: 0.2em !important;
 					padding: 3.25em 1.5em 1.25em 1.5em !important;
 				}
-			
-				.monthly_chart{
-					margin-left : 0;
-				}
+
 		/* Wrapper */
 
 			.wrapper {
@@ -4210,9 +4201,6 @@ input, select, textarea {
 				padding: 3em 1.25em 1em 1.25em !important;
 			}
 
-			.monthly_chart{
-				margin-left : 0;
-			}
 		/* Wrapper */
 
 			.wrapper {

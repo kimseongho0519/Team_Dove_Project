@@ -13,7 +13,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-<script src="{% static 'main/js/chart.js' %}"></script>
+
 
 <!-- nav -->
 {% include 'main/header.html' %}
@@ -27,8 +27,10 @@
     <canvas id="domestic_oil" style = "width:60vw; height:70vh"></canvas>
     <h2>해외 기름 가격</h2>
     <canvas id="oversea_oil" style = "width:60vw; height:50vh"></canvas>
-    <h2>알루미늄 가격</h2>
-    <canvas id="aluminium" style = "width:60vw; height:50vh"></canvas>
+    <h2>알루미늄-동-아연 가격</h2>
+    <canvas id="mineral" style = "width:60vw; height:50vh"></canvas>
+    <h2> 니켈-주석 가격</h2>
+    <canvas id="mineral2" style = "width:60vw; height:50vh"></canvas>
 </div>
 
 <script>
@@ -201,19 +203,86 @@ const grain = new Chart(ctx, {
         }
     });
 
-    const ctx4 = document.getElementById('aluminium');
-    const aluminium = new Chart(ctx4, {
+
+const ctx9 = document.getElementById('mineral');
+    const mineral = new Chart(ctx9, {
         type: 'line',
         data: {
-            labels: [{% for data in aluminium %}'{{ data.1 }}',{% endfor %}],
+            labels: [{% for data in mineral %}'{{ data.1 }}',{% endfor %}],
             datasets: [{
                 label: '알루미늄',
-                data: [{% for data in aluminium %}'{{ data.2 }}',{% endfor %}],
+                data: [{% for data in mineral %}'{{ data.2 }}',{% endfor %}],
+                backgroundColor: [
+                    'rgba(108, 74, 218, 0.7)',
+                ],
+                borderColor: [
+                    'rgba(108, 74, 218, 0.7)',
+                ],
+                borderWidth: 1,
+        },
+        {
+            label: '동',
+                data: [{% for data in mineral %}'{{ data.4 }}',{% endfor %}],
+                backgroundColor: [
+                    'rgba(185, 110, 34, 0.7)',
+                ],
+                borderColor: [
+                    'rgba(185, 110, 34, 0.7)',
+                ],
+                borderWidth: 1
+            },
+            {
+                label: '아연',
+                    data: [{% for data in mineral %}'{{ data.5 }}',{% endfor %}],
+                    backgroundColor: [
+                        'rgba(73, 181, 34, 0.7)',
+                    ],
+                    borderColor: [
+                        'rgba(73, 181, 34, 0.7)',
+                    ],
+                    borderWidth: 1
+                }]
+        },
+        options: {
+            responsive:false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+
+
+
+
+const ctx10 = document.getElementById('mineral2');
+    const mineral2 = new Chart(ctx10, {
+        type: 'line',
+        data: {
+            labels: [{% for data in mineral %}'{{ data.1 }}',{% endfor %}],
+            datasets: [{
+                label: '니켈',
+                data: [{% for data in mineral %}'{{ data.3 }}',{% endfor %}],
+                backgroundColor: [
+                    'rgba(214, 161, 41, 0.7)',
+                ],
+                borderColor: [
+                    'rgba(214, 161, 41, 0.7)',
+                ],
+                borderWidth: 1,
+        },
+        {
+            label: '주석',
+                data: [{% for data in mineral %}'{{ data.6 }}',{% endfor %}],
                 backgroundColor: [
                     'rgba(201, 203, 207, 0.7)',
                 ],
                 borderColor: [
-                    'rgba(201, 203, 207, 0.7)',
+                    'rgba(77, 96, 41, 0.7)',
                 ],
                 borderWidth: 1,
         },
@@ -227,4 +296,5 @@ const grain = new Chart(ctx, {
             }
         }
 });
+
 </script>
