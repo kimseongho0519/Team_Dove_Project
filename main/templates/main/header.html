@@ -1,21 +1,54 @@
 {% load static %}
+{% load socialaccount %}
 {% block content %}
 <header id="header">
-    <h1 id="logo"><a href="{% url 'home' %}">Dove</a></h1>
+    <h1 id="logo"><a href="{% url 'home' %}"><img src="{% static 'main/images/dove.png' %}" width="30px" height="30px" >DOVE</a></h1>
     <nav id="nav">
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'chart' %}">Chart</a></li>
             <li>
-                <a href="#">Team Members</a>
+                <a href="#">Team Member</a>
                 <ul>
-                    <li><a href="">Kim Seongho</a></li>
-                    <li><a href="#">Park Joonyoung</a></li>
-                    <li><a href="#">Seo Songhee</a></li>
-                    <li><a href="#">Han Ho</a></li>
-                
+                    <li><a href="/member_ksh/">Kim Seongho</a></li>
+                    <li><a href="/member_pjy/">Park Junyoung</a></li>
+                    <li><a href="/memlber_ssh/">Seo Songhee</a></li>
+                    <li><a href="/member_hh/">Han Ho</a></li>
                 </ul>
-            </li>							
-            <li><a href="#" class="button primary">Chart</a></li>
+            </li>
+            {% if user.is_authenticated %}
+            <li><a href="#" class="button primary" data-toggle = "modal" data-target = "#loginModal">{{ user.username}}</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- 로그인 창에 아바타 뜨게 하기 -->
+                            {% if user.socialaccount_set.all.0.get_avatar_url %}
+                                <img class ="rounded-circle"  width ="50px" src ="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="">
+                            {% else %}
+                                <img class ="rounded-circle" width = "50px" src ="https://doitdjango.com/avatar/id/750/883b70c7c62e5615/svg/{{ user.email }}">
+                            {% endif %}
+                            &nbsp;
+                            {{ user.username}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/accounts/logout/">Log Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            {% else %}
+            <li><a href="#" class="button primary" data-toggle = "modal" data-target = "#loginModal">Log In</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <li class="nav-item">
+                            <a role="button" href = "{% provider_login_url 'google' %}"><i class="fab fa-google"></i>&nbsp&nbsp Log in with Google</a>
+                            <a role="button" href = "/accounts/login/"><i class="far fa-user"></i>&nbsp&nbsp Log in with Username</a>
+                            <a role="button" href = "/accounts/signup/"><i class="far fa-envelope"></i>&nbsp&nbsp Sign Up with E-mail</a>
+                        </li>
+                    </li>
+                </ul>
+                {% endif %}
         </ul>
     </nav>
 </header>
@@ -27,3 +60,13 @@
 <script src="{% static 'main/js/browser.min.js' %}"></script>
 <script src="{% static 'main/js/breakpoints.min.js' %}"></script>
 <script src="{% static 'main/js/main.js' %}"></script>
+
+
+
+
+
+
+
+
+
+

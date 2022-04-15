@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path 
 import os
+from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y)^0+n*rkf$u8x&dvgbm5than(ud(ws!0&d=w#y2panw$u(=xn'
+# SECRET_KEY = 'django-insecure-y)^0+n*rkf$u8x&dvgbm5than(ud(ws!0&d=w#y2panw$u(=xn'
 
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-y)^0+n*rkf$u8x&dvgbm5than(ud(ws!0&d=w#y2panw$u(=xn''')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = int(os.environ.get('DEBUG', 1))
+if os.environ.get('DJANGO_ALLOWED_HOSTS'):
+    ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
+else:
+    ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -38,6 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'main',
 ]
 
@@ -83,17 +95,27 @@ WSGI_APPLICATION = 'Team_Dove_Project.wsgi.application'
         
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'project_one',  # DB명
+#         'USER': 'joy',   #개발자 id
+#         'PASSWORD':'Ghfkddl~1283',   # 개발자 pw
+#         'HOST': '15.164.171.72',       # 서버 IP
+#         'PORT': '3306'
+#     }
+# }
+# mysql
 DATABASES = {
     'default': {
-       'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'project_one',  # DB명
-        'USER': 'joy',   #개발자 id
-        'PASSWORD':'Ghfkddl~1283',   # 개발자 pw
-        'HOST': '15.164.171.72',       # 서버 IP
-        'PORT': '3306'
+        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.environ.get('SQL_DATABASE', os.path.join(BASE_DIR / 'db.sqlite3')),
+        'USER': os.environ.get('SQL_USER', 'user'),
+        'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
+        'HOST': os.environ.get('SQL_HOST', 'localhost'),
+        'PORT': os.environ.get('SQL_PORT', '5432')
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -129,18 +151,33 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
+
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 MEDEA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 
+AUTHENTICATION_BACKEND = (
+
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+)
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED =True
+ACCOUNT_EMAIL_VERIFICATION ='none'
+LOGIN_REDIRECT_URL = '/main/'

@@ -2190,7 +2190,7 @@ input, select, textarea {
 			content: '';
 			display: inline-block;
 			height: 0.2em;
-			max-width: 20em;
+			/* max-width: 20em; */
 			width: 75%;
 		}
 
@@ -3143,11 +3143,11 @@ input, select, textarea {
 		}
 
 		.spotlight.style2 .content {
-			border-color: #5480f1;
+			border-color: #e44c65;
 		}
 
 		.spotlight.style3 .content {
-			border-color: #39c088;
+			border-color: #e44c65;
 		}
 
 		.monthly_chart{
@@ -3647,7 +3647,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		background: #272833;
+		background: #e44c65;
 		padding: 6em 0;
 		text-align: center;
 	}
@@ -3700,7 +3700,13 @@ input, select, textarea {
 				#footer .copyright li a {
 					color: inherit;
 				}
-
+				#footer .github li {
+					display: inline-block;
+				}
+				#footer .github li a{
+					color: inherit;
+				}
+				
 /* XLarge */
 
 	@media screen and (max-width: 1680px) {

@@ -1,7 +1,7 @@
 from typing import List
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Aluminium, Grain
+from .models import Grain,DomesticOil,OverseaOil,Mineral,MonthlyDomesticOil,MonthlyGrain,MonthlyOverseaOil,MonthlyMineral
 import pymysql
 
 # class MainList(ListView):
@@ -23,10 +23,6 @@ def Homepage(request) :
         domestic_oil = cur.fetchall()
         cur.execute("SELECT * FROM oversea_oil")
         oversea_oil = cur.fetchall()
-        cur.execute("SELECT * FROM aluminium")
-        aluminium = cur.fetchall()
-        cur.execute("SELECT * FROM monthly_al")
-        monthly_al = cur.fetchall()
         cur.execute("SELECT * FROM monthly_domestic_oil")
         monthly_domestic_oil = cur.fetchall()
         cur.execute("SELECT * FROM monthly_grain")
@@ -46,8 +42,6 @@ def Homepage(request) :
         "corn" : corn,
         "domestic_oil" : domestic_oil,
         "oversea_oil" : oversea_oil,
-        "aluminium" : aluminium,
-        "monthly_al" : monthly_al,
         "monthly_domestic_oil" : monthly_domestic_oil,
         "monthly_grain" : monthly_grain,
         "monthly_oversea_oil" : monthly_oversea_oil,
@@ -69,8 +63,6 @@ def chart_bar(request):
         domestic_oil = cur.fetchall()
         cur.execute("SELECT * FROM oversea_oil")
         oversea_oil = cur.fetchall()
-        cur.execute("SELECT * FROM aluminium")
-        aluminium = cur.fetchall()
         cur.execute("SELECT * FROM mineral")
         mineral = cur.fetchall()
         
@@ -85,7 +77,6 @@ def chart_bar(request):
         "corn" : corn,
         "domestic_oil" : domestic_oil,
         "oversea_oil" : oversea_oil,
-        "aluminium" : aluminium,
         "mineral" : mineral
     })
 
@@ -94,8 +85,6 @@ def monthly_chart(request):
     cur = db.cursor()
 
     with db :
-        cur.execute("SELECT * FROM monthly_al")
-        monthly_al = cur.fetchall()
         cur.execute("SELECT * FROM monthly_domestic_oil")
         monthly_domestic_oil = cur.fetchall()
         cur.execute("SELECT * FROM monthly_grain")
@@ -106,7 +95,6 @@ def monthly_chart(request):
         monthly_mineral = cur.fetchall()
 
     return render(request,"main/monthly_chart.html",{
-        "monthly_al" : monthly_al,
         "monthly_domestic_oil" : monthly_domestic_oil,
         "monthly_grain" : monthly_grain,
         "monthly_oversea_oil" : monthly_oversea_oil,
@@ -116,4 +104,25 @@ def monthly_chart(request):
 
 class GrainList(ListView):
     model = Grain
+
+class Domesticoil(ListView):
+    model = DomesticOil
+
+class OverseaOil(ListView):
+    model = OverseaOil
+
+class Mineral(ListView):
+    model = Mineral
+
+class MonthlyDomesticOil(ListView):
+    model = MonthlyDomesticOil
+
+class MonthlyGrain(ListView):
+    model = MonthlyGrain
+
+class MonthlyOverseaOil(ListView):
+    model = MonthlyOverseaOil
+
+class MonthlyMineral(ListView):
+    model = MonthlyMineral
 

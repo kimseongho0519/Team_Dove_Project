@@ -1,210 +1,241 @@
 {% load static %}
+<html>
 <head>
-    <meta charset-"UTF-8">
+    <meta charset = "UTF-8">
     <title>{% block head_title %}chart{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" href="{% static 'main/images/favicon.ico' %}" type="image/x-icon"><!-- 추가 -->
     <link rel="stylesheet" href= "{% static 'main/css/main.css' %}"/>
     <noscript><link rel="stylesheet" href="{% static 'main/css/noscript.css' %}" /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/4637521f83.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@300&family=Black+Ops+One&family=Cinzel:wght@700;800;900&family=Gowun+Dodum&family=Limelight&family=MuseoModerno:wght@100;300;900&family=Noto+Serif+KR:wght@500&family=Raleway:wght@300&family=Slabo+27px&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="{% static 'main/js/chart.js' %}"></script>
 </head>
 
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<body>
+        <!-- nav -->
+        {% include 'main/header.html' %}
 
 
-<!-- nav -->
-{% include 'main/header.html' %}
-
-
-<!-- chart-->
-<div id = "chart" class="wrapper style1">
-    <h2>곡류 가격</h2>
-    <canvas id="grain" style = "width:60vw; height:70vh"></canvas>
-    <h2>국내 기름 가격</h2>
-    <canvas id="domestic_oil" style = "width:60vw; height:70vh"></canvas>
-    <h2>해외 기름 가격</h2>
-    <canvas id="oversea_oil" style = "width:60vw; height:50vh"></canvas>
-    <h2>알루미늄-동-아연 가격</h2>
-    <canvas id="mineral" style = "width:60vw; height:50vh"></canvas>
-    <h2> 니켈-주석 가격</h2>
-    <canvas id="mineral2" style = "width:60vw; height:50vh"></canvas>
-</div>
-
-<script>
-const ctx = document.getElementById('grain');
-const grain = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [{% for data in wheat %}'{{ data.0 }}',{% endfor %}],
-        datasets: [{
-            label: '{{grain1}}',
-            data: [{% for data in wheat %}'{{ data.3 }}',{% endfor %}],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-            ],
-            borderWidth: 1,
-    },
-    {
-        label: '{{grain2}}',
-            data: [{% for data in soybean %}'{{ data.3 }}',{% endfor %}],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-            ],
-            borderColor: [
-                'rgba(75, 192, 192, 0.2)',
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '{{grain3}}',
-                data: [{% for data in corn %}'{{ data.3 }}',{% endfor %}],
-                backgroundColor: [
-                    'rgba(255, 205, 86, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 205, 86, 0.2)',
-                ],
-                borderWidth: 1
-            }]
-    },
-    options: {
-        responsive:false,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-    const ctx2 = document.getElementById('domestic_oil');
-    const domestic_oil = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: [{% for data in domestic_oil %}'{{ data.1 }}',{% endfor %}],
-            datasets: [{
-                label: '고급휘발유',
-                data: [{% for data in domestic_oil %}'{{ data.2 }}',{% endfor %}],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 1,
-        },
-        {
-            label: '보통휘발유',
-                data: [{% for data in domestic_oil %}'{{ data.3 }}',{% endfor %}],
-                backgroundColor: [
-                    'rgba(75, 192, 192, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(75, 192, 192, 0.2)',
-                ],
-                borderWidth: 1
-            },
-            {
-                label: '경유',
-                    data: [{% for data in domestic_oil %}'{{ data.4 }}',{% endfor %}],
+<!-- chart 이미지 5장 추가 -->
+    <div class="wrapper style1">
+            <img src="{% static 'main/images/chart_banner.png' %}" alt="" style = "width:100vw; height:auto"></div>
+        <div id = "chart">
+            <h2 align = "center" style = 'color:rgb(255, 187, 0);'>< 곡물 가격 ></h2>
+            <div style="float:left; margin-left:10px; margin-right:20px;">
+                <canvas id="grain" style = "width:70vw; height:40vh"></canvas>
+            </div>
+            <div style="float:left;">
+                <img src="{% static 'main/images/c1.png' %}" alt="" style = "width:auto; height:40vh">
+            </div>
+            <hr width = "100%" color = "black" size = "1">
+            <h2 align = "center" style = 'color:rgb(255, 187, 0);'>< 국내 기름 가격 ></h2>
+            <div style="float:left; margin-left:10px; margin-right:20px;">
+                <canvas id="domestic_oil" style = "width:70vw; height:40vh"></canvas>
+            </div>
+            <div style="float:left;">
+                <img src="{% static 'main/images/c2.png' %}" alt="" style = "width:auto; height:40vh">
+            </div>
+            <hr width = "100%" color = "black" size = "1">
+            <h2 align = "center" style = 'color:rgb(255, 187, 0);'>< 해외 기름 가격 ></h2>
+            <div style="float:left; margin-left:10px; margin-right:20px;">
+                <canvas id="oversea_oil" style = "width:70vw; height:40vh"></canvas>
+            </div>
+            <div style="float:left;">
+                <img src="{% static 'main/images/c3.png' %}" alt="" style = "width:auto; height:40vh">
+            </div>
+            <hr width = "100%" color = "black" size = "1">
+            <h2 align = "center" style = 'color:rgb(255, 187, 0);'>< 알루미늄-동-아연 가격 ></h2>
+            <div style="float:left; margin-left:10px; margin-right:20px;">
+                <canvas id="mineral" style =  "width:70vw; height:40vh"></canvas>
+            </div>
+            <div style="float:left;">
+                <img src="{% static 'main/images/c4.png' %}" alt="" style = "width:auto; height:40vh">
+            </div>
+            <hr width = "100%" color = "black" size = "1">
+            <h2 align = "center" style = 'color:rgb(255, 187, 0);'>< 니켈-주석 가격 ></h2>
+            <div style="float:left; margin-left:10px; margin-right:20px;">
+                <canvas id="mineral2" style =  "width:70vw; height:40vh"></canvas>
+            </div>
+            <div style="float:left;">
+                <img src="{% static 'main/images/c5.png' %}" alt="" style = "width:auto; height:40vh">
+            </div>
+        </div>
+</body>
+</html>
+    <script>
+        const ctx = document.getElementById('grain');
+        const grain = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [{% for data in wheat %}'{{ data.0 }}',{% endfor %}],
+                datasets: [{
+                    label: '{{grain1}}',
+                    data: [{% for data in wheat %}'{{ data.3 }}',{% endfor %}],
                     backgroundColor: [
-                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
                     ],
                     borderColor: [
-                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(255, 99, 132, 1)',
                     ],
-                    borderWidth: 1
-                }]
-        },
-        options: {
-            responsive:false,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    const ctx3 = document.getElementById('oversea_oil');
-    const oversea_oil = new Chart(ctx3, {
-        type: 'line',
-        data: {
-            labels: [{% for data in oversea_oil %}'{{ data.1 }}',{% endfor %}],
-            datasets: [{
-                label: '휘발유(95Ron)',
-                data: [{% for data in oversea_oil %}'{{ data.2 }}',{% endfor %}],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 1,
-        },
-        {
-            label: '휘발유(92RON)',
-                data: [{% for data in oversea_oil %}'{{ data.3 }}',{% endfor %}],
-                backgroundColor: [
-                    'rgba(75, 192, 192, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(75, 192, 192, 0.2)',
-                ],
-                borderWidth: 1
+                    borderWidth: 1,
             },
             {
-                label: '등유',
-                    data: [{% for data in oversea_oil %}'{{ data.4 }}',{% endfor %}],
+                label: '{{grain2}}',
+                    data: [{% for data in soybean %}'{{ data.3 }}',{% endfor %}],
                     backgroundColor: [
-                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
                     ],
                     borderColor: [
-                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
                     ],
                     borderWidth: 1
                 },
                 {
-                    label: '경유(0.05%)',
-                        data: [{% for data in oversea_oil %}'{{ data.5 }}',{% endfor %}],
+                    label: '{{grain3}}',
+                        data: [{% for data in corn %}'{{ data.3 }}',{% endfor %}],
                         backgroundColor: [
-                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                responsive:false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+            const ctx2 = document.getElementById('domestic_oil');
+            const domestic_oil = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: [{% for data in domestic_oil %}'{{ data.1 }}',{% endfor %}],
+                    datasets: [{
+                        label: '고급휘발유',
+                        data: [{% for data in domestic_oil %}'{{ data.2 }}',{% endfor %}],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                        ],
+                        borderWidth: 1,
+                },
+                {
+                    label: '보통휘발유',
+                        data: [{% for data in domestic_oil %}'{{ data.3 }}',{% endfor %}],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 0.2)',
                         ],
                         borderWidth: 1
                     },
                     {
-                        label: '경유(0.01%)',
-                            data: [{% for data in oversea_oil %}'{{ data.6 }}',{% endfor %}],
+                        label: '경유',
+                            data: [{% for data in domestic_oil %}'{{ data.4 }}',{% endfor %}],
                             backgroundColor: [
-                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 205, 86, 0.2)',
                             ],
                             borderColor: [
-                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 205, 86, 0.2)',
                             ],
                             borderWidth: 1
                         }]
-        },
-        options: {
-            responsive:false,
-            scales: {
-                y: {
-                    beginAtZero: true
+                },
+                options: {
+                    responsive:false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
                 }
-            }
-        }
-    });
-
-
-const ctx9 = document.getElementById('mineral');
+            });
+            const ctx3 = document.getElementById('oversea_oil');
+            const oversea_oil = new Chart(ctx3, {
+                type: 'line',
+                data: {
+                    labels: [{% for data in oversea_oil %}'{{ data.1 }}',{% endfor %}],
+                    datasets: [{
+                        label: '휘발유(95Ron)',
+                        data: [{% for data in oversea_oil %}'{{ data.2 }}',{% endfor %}],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                        ],
+                        borderWidth: 1,
+                },
+                {
+                    label: '휘발유(92RON)',
+                        data: [{% for data in oversea_oil %}'{{ data.3 }}',{% endfor %}],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 0.2)',
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: '등유',
+                            data: [{% for data in oversea_oil %}'{{ data.4 }}',{% endfor %}],
+                            backgroundColor: [
+                                'rgba(255, 205, 86, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(255, 205, 86, 0.2)',
+                            ],
+                            borderWidth: 1
+                        },
+                        {
+                            label: '경유(0.05%)',
+                                data: [{% for data in oversea_oil %}'{{ data.5 }}',{% endfor %}],
+                                backgroundColor: [
+                                    'rgba(255, 159, 64, 0.2)',
+                                ],
+                                borderColor: [
+                                    'rgba(255, 159, 64, 0.2)',
+                                ],
+                                borderWidth: 1
+                            },
+                            {
+                                label: '경유(0.01%)',
+                                    data: [{% for data in oversea_oil %}'{{ data.6 }}',{% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(54, 162, 235, 0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(54, 162, 235, 0.2)',
+                                    ],
+                                    borderWidth: 1
+                                }]
+                },
+                options: {
+                    responsive:false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            const ctx9 = document.getElementById('mineral');
     const mineral = new Chart(ctx9, {
         type: 'line',
         data: {
