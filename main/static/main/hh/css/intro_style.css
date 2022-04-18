@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+
+ul, ol, li{
+    list-style : none;
+}
+
+a {
+    text-decoration : none;
+}
+
+body {
+    /* background:linear-gradient(45deg,#d4fc79,#96e6a1); */
+    background: white;
+}
+/* #55f5b2,#a0ff9d */
+
+main{
+    /* margin-left:20%; */
+    box-sizing:border-box;
+    padding:20px;
+}
+
+
+/* main div h1{
+    width:100%;
+    height:100%;
+    border: 5px solid black;
+    text-align : center;
+    margin-bottom : 30px;
+} */
+
+main div.first{
+    display:flex;
+    margin-bottom : 35vh;
+}
+
+
+main div.photo{
+    width : 30%;
+    height : 60vh;
+    border : 5px solid black;
+    margin-left:5%;
+    margin-right:15%;
+}
+
+main div.photo img{
+    width : 100%;
+    height : 100%;
+}
+
+main div.profile{
+    width:60%;
+    height:300px;
+    /* border : 5px solid black; */
+}
+
+
+.name{
+    margin-left : 5%;
+}
+
+.profile li.name{
+    display:flex;
+    margin-top : 10px;
+}
+
+.profile li.name i{
+    font-size : 300%;
+    margin-right :9%;
+}
+
+.profile li.name h2{
+    font-size : 130%;
+    transform: translateY(20px);
+    font-weight:bold;
+}
+
+.profile li.name span{
+    font-size : 150%;
+    transform: translateY(20px);
+    margin-left : 10%;
+    font-weight: bold;
+}
+
+
+.profile li.school{
+    display:flex;
+    margin-top : 30px;
+}
+
+.profile li.school i{
+    font-size : 300%;
+    margin-left:3%;
+    margin-right: 7%;
+}
+
+.profile li.school h2{
+    font-size : 130%;
+    transform: translateY(20px);
+    font-weight:bold;
+}
+
+.profile li.school span{
+    font-size : 100%;
+    transform : translateY(20px);
+   font-weight: bold;
+   margin-left:10%; 
+}
+
+
+.profile li.major{
+    display:flex;
+    margin-top : 30px;
+}
+
+.profile li.major i{
+    font-size : 300%;
+    margin-left:4.5%;
+    margin-right: 7.5%;
+}
+
+.profile li.major h2{
+    font-size : 130%;
+    transform: translateY(20px);
+    font-weight:bold;
+}
+
+.profile li.major span{
+    font-size : 100%;
+    transform : translateY(20px);
+   font-weight: bold;
+   margin-left:10%; 
+}
+
+.profile li.license{
+    display:flex;
+    margin-top : 30px;
+}
+
+.profile li.license i{
+    font-size : 300%;
+    margin-left:4.5%;
+    margin-right: 7.5%;
+}
+
+.profile li.license h2{
+    font-size : 130%;
+    transform: translateY(20px);
+    font-weight:bold;
+}
+
+.profile li.license ol{
+    font-size : 100%;
+    transform : translateY(20px);
+   font-weight: bold;
+   margin-left:2%;
+}
+
+.profile li.license ol li{
+    margin-bottom : 5px;
+}
+
+
+
+/* skill창 */
+.second{
+    margin-bottom : 50px;
+}
+
+.second >h1{
+    font-size : 50px;
+    margin-bottom: 50px;
+}
+
+#progress-r { 
+    appearance: none; 
+    width : 100%
+} 
+
+/* ::-webkit-progress-bar : progress의 배경이 되는 요소 */
+#progress-r::-webkit-progress-bar { 
+    background:#f0f0f0; border-radius:100px; box-shadow: inset 3px 3px 10px #ccc; 
+} 
+
+/* ::-webkit-progress-value : progress의 진행 bar가 되는 요소 */
+#progress-r::-webkit-progress-value {
+     border-radius:10px; background: #1D976C; background: -webkit-linear-gradient(to right, #93F9B9, #1D976C); background: linear-gradient(to right, #93F9B9, #1D976C); 
+}
+
+
+
+
+

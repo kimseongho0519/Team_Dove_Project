@@ -14,6 +14,23 @@ urlpatterns = [
 
     path("member_ksh/", views.member_ksh, name="member_ksh"),
     
+    path('member_pjy/', views.member_pjy, name="member_pjy"),
+    path('pjy_po1/', views.pjy_po1, name="pjy_po1"),
+    path('pjy_po2/', views.pjy_po2, name="pjy_po2"),
+    path('pjy_po3/', views.pjy_po3, name="pjy_po3"),
+    path('pjy_po4/', views.pjy_po4, name="pjy_po4"),
+    path('pjy_po5/', views.pjy_po5, name="pjy_po5"),
+    path('pjy_po6/', views.pjy_po6, name="pjy_po6"),
+
+    path('member_hh/', views.member_hh, name="member_hh"),
+    path("info/", views.info, name="info"),
+    path("uam/", views.uam, name="uam"),
+    path("sport/", views.sport, name="sport"),
+    path("textmining/", views.textmining, name="textmining"),
+    path("r_analysis/", views.r_analysis, name="r_analysis"),
+    path("dplyr/", views.dplyr, name="dplyr"),
+
+
 ]
 
 
