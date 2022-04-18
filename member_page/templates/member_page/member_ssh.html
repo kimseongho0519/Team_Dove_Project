@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+{% load static %}
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Astral by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'main/ssh/css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'main/ssh/css/noscript.css' %}" />
+	</noscript>
+
+	<link href="https://webfontworld.github.io/sebang/SebangGothic.css" rel="stylesheet">
+	<link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+	<link href="https://webfontworld.github.io/vitro/VitroPride.css" rel="stylesheet">
+	<link href="https://webfontworld.github.io/sandbox/SBAggro.css" rel="stylesheet">
+	<link href="https://webfontworld.github.io/onestore/OneMobileTitle.css" rel="stylesheet">
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper-->
+	<div id="wrapper">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<a href="{% url 'home' %}"><img src="{% static 'main/ssh/images/icon1.png' %}" width="60px"
+					height="60px"><span>Home</span></a>
+			<a href="#work"><img src="{% static 'main/ssh/images/icon2.png' %}" width="60px"
+					height="60px"><span>Profile</span></a>
+			<a href="#contact"><img src="{% static 'main/ssh/images/icon4.png' %}" width="60px"
+					height="60px"><span>Skills</span></a>
+			<a href="#skills"><img src="{% static 'main/ssh/images/icon3.png' %}" width="60px"
+					height="60px"><span>Portfolio</span></a>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Me -->
+			<article id="home" class="panel intro">
+				<header>
+					<h1>웹프로그래밍 팀프로젝트</h1>
+					<p>Seo SongHee</p>
+				</header>
+				<a href="#work" class="jumplink pic">
+					<span class="arrow icon solid fa-chevron-right"><span></span></span>
+					<img src="{% static 'main/ssh/images/coding.jpg' %}" alt="" />
+				</a>
+			</article>
+
+
+
+			<article id="work" class="panel">
+				<header>
+					<h1>Profile</h1>
+				</header>
+
+				<section>
+				<div class="row">
+					<div class="skill-bars">
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="proimg">
+								<img src="{% static 'main/ssh/images/pro1.png' %}" alt="" width="100px" height="100px">
+
+							</div>
+
+
+							<div class="protext">
+							<p>Seo songhee
+
+							</p>
+							<div class="metext1">
+								2015 - 2018 : 커피숍 운영<br>
+								2019 - 2020 : 광고회사 근무<br>
+								2020 ~ 현재<br>
+								편집디자이너 프리랜서<br>
+							웹프로그래밍 studying!
+
+							</div>
+							
+					
+
+
+				
+							
+								</div>							
+										
+									
+								
+
+
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+			</article>
+
+
+			<!-- skills -->
+
+			<article id="contact" class="panel">
+				<header>
+					<h2>My Skills</h2>
+				</header>
+
+				<section>
+					<div class="row">
+						<div class="skill-bars">
+							<div class="bar">
+								<div class="info">
+									<span>HTML</span>
+								</div>
+								<div class="progress-line html">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<div class="info">
+									<span>CSS</span>
+								</div>
+								<div class="progress-line css">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<div class="info">
+									<span>jQuery</span>
+								</div>
+								<div class="progress-line jquery">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<div class="info">
+									<span>Python</span>
+								</div>
+								<div class="progress-line python">
+									<span></span>
+								</div>
+							</div>
+
+
+							<div class="bar">
+								<div class="info">
+									<span>Mysql</span>
+								</div>
+								<div class="progress-line mysql">
+									<span></span>
+								</div>
+							</div>
+
+							<div class="bar">
+								<div class="info">
+									<span>Adobe Illustrator</span>
+								</div>
+								<div class="progress-line ilst">
+									<span></span>
+								</div>
+							</div>
+
+							<div class="bar">
+								<div class="info">
+									<span>Adobe Photoshopr</span>
+								</div>
+								<div class="progress-line phs">
+									<span></span>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</section>
+			</article>
+			<!-- end skills-->
+
+
+			<!--Portfolio-->
+			<article id="skills" class="panel">
+				<header>
+					<h2>Portfolio</h2>
+				</header>
+
+
+				<section>
+					<div class="row">
+						<div class="skill-bars">
+
+
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="{% url 'ssh_pt1' %}" class="image fit"><img
+										src="{% static 'main/ssh/images/pt1.jpg' %}" alt=""></a>
+							</div>
+
+
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="{% url 'ssh_pt2' %}" class="image fit"><img
+										src="{% static 'main/ssh/images/pt2.jpg' %}" alt=""></a>
+							</div>
+
+
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="{% url 'ssh_pt3' %}" class="image fit"><img
+										src="{% static 'main/ssh/images/pt3.jpg' %}" alt=""></a>
+							</div>
+
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="{% url 'ssh_pt3' %}" class="image fit"><img
+										src="{% static 'main/ssh/images/pt4.jpg' %}" alt=""></a>
+							</div>
+
+
+
+						</div>
+					</div>
+				</section>
+
+
+
+
+			</article>
+
+
+		</div>
+
+	</div>
+		<!-- Footer -->
+		<div id="footer">
+			<ul class="copyright">
+				<li>&copy; Untitled.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'main/ssh/js/jquery.min.js' %}"></script>
+	<script src="{% static 'main/ssh/js/browser.min.js' %}"></script>
+	<script src="{% static 'main/ssh/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'main/ssh/js/util.js' %}"></script>
+	<script src="{% static 'main/ssh/js/main.js' %}"></script>
+
+</body>
+
+</html>

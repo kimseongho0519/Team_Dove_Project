@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-y)^0+n*rkf$u8x&dvgbm5
 # DEBUG = True
 
 DEBUG = int(os.environ.get('DEBUG', 1))
+
 if os.environ.get('DJANGO_ALLOWED_HOSTS'):
     ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
 else:
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'member_page',
     'main',
 ]
 
@@ -181,3 +183,4 @@ SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED =True
 ACCOUNT_EMAIL_VERIFICATION ='none'
 LOGIN_REDIRECT_URL = '/main/'
+LOGOUT_REDIRECT_URL = '/main/'

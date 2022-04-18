@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>박준영 포트폴리오</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="{% static 'main/images/favicon.ico' %}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'main/pjy/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'main/pjy/css/mnoscript.css' %}" /></noscript>
+		<script src="https://kit.fontawesome.com/1b3ab8d17f.js" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#Profile" class="icon solid fa-user"><span>Profile</span></a>
+						<a href="#Technology" class="icon solid fa-wrench"><span>Technology</span></a>
+						<a href="#Portfolio" class="icon solid fa-folder"><span>Portfolio</span></a>
+						<a href="{% url 'home' %}" class="icon solid fa-home"><span>Home</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="Profile" class="panel intro">
+								<header>
+									<h1>Park Jun Young</h1>
+									<p>Data Analyst</p>
+									<ul class="contact">
+										<li>
+											<i class="fas fa-person"></i>
+											<span>1997.06.10</span>
+										</li>
+										<li>
+											<i class="fas fa-school"></i>
+											<span>한림대학교 데이터과학융합스쿨 데이터 테크 전공</span>
+										</li>
+										<li>
+											<i class="fab fas fa-phone"></i>
+											<span>010-9449-6416</span>
+										</li>
+										<li>
+											<i class="fas fa-envelope"></i>
+											<span>nhtrg1@gmail.com</span>
+										</li>
+										</ul>
+								</header>
+								<a href="#Technology" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my Technology</span></span>
+									<img src="{% static 'main/pjy/images/me.jpg' %}" alt="" />
+								</a>
+							</article>
+						<!-- Technology -->
+							<article id="Technology" class="panel">
+								<header>
+									<h2>Technology</h2>
+								</header>
+            					<div class="wrap">
+                					<article>
+                    					<div class="pic">
+                        					<img src="{% static 'main/pjy/images/ptyhon.jpg' %}" alt="Python">
+                    					</div>
+                    					<h2><a>Python</a></h2>
+                        					
+                					</article>
+                					<article>
+                    					<div class="pic">
+                        					<img src="{% static 'main/pjy/images/html.webp' %}" alt="HTML">
+                    					</div>
+                    					<h2><a>HTML</a></h2>
+                        
+                					</article>
+                					<article>
+                    					<div class="pic">
+                        					<img src="{% static 'main/pjy/images/css.png' %}" alt="CSS">
+                    					</div>
+                    					<h2><a>CSS</a></h2>
+                					</article>
+               						<article>
+                    					<div class="pic">
+                        					<img src="{% static 'main/pjy/images/js.jpg' %}" alt="Java Script">
+                    					</div>
+                    					<h2><a>Java Script</a></h2>
+                        
+                					</article>
+									
+						</article>
+							
+
+						<!-- Portfolio -->
+						<article id="Portfolio" class="panel">
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+							<p>
+								박준영의 포트폴리오 입니다.
+							</p>
+							<section>
+								<div class="row">
+									<div class="col-4 col-6-medium col-12-small">
+										<a target="_blank" href="/pjy_po1/" class="image fit"><img src="{% static 'main/pjy/images/po1.png' %}" alt=""><span>경력단절여성 재취업</span></a>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a target="_blank" href="/pjy_po2/" class="image fit"><img src="{% static 'main/pjy/images/po2.png' %}" alt=""><span>의료시설 건설지역 추천</span></a>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a target="_blank" href="/pjy_po3/" class="image fit"><img src="{% static 'main/pjy/images/po3.png' %}" alt=""><span>코로나 확진자 수에 따른 변화들</span></a>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a target="_blank" href="/pjy_po4/" class="image fit"><img src="{% static 'main/pjy/images/po4.png' %}" alt=""><span>코로나의 교통사고 영향</span></a>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a target="_blank" href="/pjy_po5/" class="image fit"><img src="{% static 'main/pjy/images/po5.png' %}" alt=""><span>텍스트마이닝을 통한 제주도 소개</span></a>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a target="_blank" href="/pjy_po6/" class="image fit"><img src="{% static 'main/pjy/images/po6.png' %}" alt=""><span>서울시 AED 찾기</span></a>
+									</div>
+								</div>
+							</section>
+						</article>
+
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>박준영</li><li>nhtrg1@gmail.com</li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'main/pjy/js/jquery.min.js' %}"></script>
+			<script src="{% static 'main/pjy/js/browser.min.js' %}"></script>
+			<script src="{% static 'main/pjy/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'main/pjy/js/util.js' %}"></script>
+			<script src="{% static 'main/pjy/js/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>김성호</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'main/ksh/css/myindex.css' %}" />
+		<script src="https://kit.fontawesome.com/82d01722e6.js" crossorigin="anonymous"></script>
+		<noscript><link rel="stylesheet" href="{% static 'main/ksh/css/noscript.css' %}" /></noscript>
+		<link rel="apple-touch-icon" sizes="57x57" href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico/apple-icon-57x57.png' %}">
+		<link rel="apple-touch-icon" sizes="60x60" href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico/apple-icon-60x60.png' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico/android-icon-72x72.png' %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico/apple-icon-76x76.png' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico/apple-icon-114x114.png' %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico//apple-icon-120x120.png' %}">
+		<link rel="apple-touch-icon" sizes="144x144" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico//apple-icon-144x144.png' %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico//apple-icon-152x152.png' %}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'main/ksh//984eeac01f3a0a3cca2d2798948ad358.ico//apple-icon-180x180.png' %}">
+		<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico//android-icon-192x192.png' %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico//favicon-32x32.png' %}">
+		<link rel="icon" type="image/png" sizes="96x96" href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico//favicon-96x96.png' %}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico//favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'main/ksh/984eeac01f3a0a3cca2d2798948ad358.ico//manifest.json' %}">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		
+	</head>
+	<body class="is-preload">
+ 
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-user"><span>Profile</span></a>
+						<a href="#work" class="icon solid fa-folder"><span>Life</span></a>
+						<a href="#Study" class="icon solid fa-desktop"><span>Study</span></a>
+						<a href="https://www.instagram.com/kiimsungho/" class="fa-brands fa-instagram-square" target="blank" ><span>instagram</span></a>
+						<a href="{% url 'home' %}" class="icon solid fa-home"><span>Home</span></a>
+					</nav>
+					
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1 style="margin-top:50px">
+										김성호
+									</h1>
+									<p>프론트엔드 개발자 / 웹 퍼플리셔 지원</p>
+										<ul class="icon">
+											<li>
+											<i class="fa-solid fa-house-chimney-window"></i>
+											<span>서울 강동구 성내동</span>
+											</li>
+											<li>
+												<i class="fa-solid fa-graduation-cap"></i>
+												<span>한림대학교 전자공학과 졸업</span>
+										
+											</li>
+											<li>
+												<i class="fa-solid fa-phone"></i>
+												<span>010-7221-1283</span>
+											
+											</li>
+											<li>
+												<i class="fa-solid fa-envelope"></i>
+												<span>rlatjdgh1283@naver.com</span>
+											</li>
+										</ul>
+								</header>
+								<a href="#work" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="{% static 'main/ksh/css/images/kim_photo.JPG' %}" alt="" />
+								</a>
+							</article>
+
+						<!-- Work -->
+							<article id="work" class="panel">
+								
+								<header style="text-align: center; text-size-adjust:150%;">
+									<i class="fa-solid fa-person-running"style="font-size:60px;"><strong h1> Life</strong></i>
+								</header>
+								<section>
+									<div class="row">
+										
+										<div class="col-6">
+											<a href="#" class="image fit" style="cursor: default;"><img src="{% static 'main/ksh/css/images/365plus1.png' %}" alt=""></a>
+										</div>
+										<div class="col-6">
+											<div class="ment" >	
+												<strong h1>편의점</strong>
+													<ul>
+														<li>2015년 / 10월 편의점 창업</li>
+														<li>판매,직원관리,시재관리</li>
+														<li>2017년 / 편의점 폐업</li>
+														<li>매출부진 및 진로고민</li>
+														<hr style="width: 100%;">
+														<p> → 20대 초반에 사업을 시작한다는 생각으로,<br>
+															휴학을 하고 막연하게 편의점 사업을 시작했습니다. 
+															일을 하면서 단순노동인
+															직무와 근무환경이 제 진로를 돌아보는 계기가 되었습니다. 
+
+														</p>										
+													</ul>
+											</div>			
+											
+										</div>
+										<div class="col-6">
+											<a href="https://legacyproject.co.kr/?NaPm=ct%3Dl1z7x28n%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D56b001f8bc599bf646e2c4cefc9c1f0f6206218b" class="image fit" target="_blank" ><img src="{% static 'main/ksh/css/images/legacy.png' %}" alt=""></a>
+										</div>
+										<div class="col-6">
+											<div class="ment" >
+												<strong h1>온라인 쇼핑몰</strong>
+												<ul>
+													<li>2017년 / 8월 의류쇼핑몰 동업</li>
+													<li>촬영 및 MD역할 / 온라인 마케팅</li>
+													<li>2019년 동업자에게 양도</li>
+													<hr style="width: 100%;">
+												<p> → 평상시에도 패션에 관심이 있어서
+													친구와 시작한 사업입니다. 2년 6개월 동안 하면서
+													재밌었고, 학교 졸업문제와 일에 애정이 없어지면서,
+													고심 끝에 동업자에게 양도하였습니다.
+												</p>
+												</ul>
+											</div>
+										</div>
+										<div class="col-6">
+											<a href="https://www.hallym.ac.kr/" class="image fit" target="_blank" ><img src="{% static 'main/ksh/css/images/hallym.png' %}" alt=""></a>
+										</div>
+										<div class="col-6">
+											<div class="ment">
+												<strong h1>한림대학교</strong>
+												<ul>
+													<li>한림대학교 입학</li>
+													<li>2학년 - 전자공학과 전과</li>
+													<li>2016-2020년 휴학</li>
+													<li>2022년 졸업</li>
+													<hr style="width: 100%;">
+													<p> → 학교졸업까지 오랜시간이 걸렸습니다.<br>
+														  긴 휴학기간동안 많은 경험을 했고, 헛되지 않은 시간이였습니다.
+														  4학년 2학기 때 전공이 아닌, 프로그래밍 수업을 듣고 흥미가 생겨서 
+														  현재 k-디지털 트레이닝을 신청하게 되었습니다.
+														   
+													</p>
+												</ul>
+											</div>	
+										</div>
+										<div class="col-6">
+											<a href="https://smartstore.naver.com/colorless/products/5084023624?NaPm=ct%3Dl1ru081c%7Cci%3D7d0c53bc4dd0b3445fffcc42d89f5d815a74311a%7Ctr%3Dslsl%7Csn%3D966238%7Chk%3D37c08b57300a8bc2417189582bd662dd8a89e247" class="image fit"target="_blank"><img src="{% static 'main/ksh/css/images/watch.jpg' %}" alt="watch"></a>
+										</div>
+										<div class="col-6">
+											<div class="ment">
+												<strong h1>시계 쇼핑몰</strong>
+												<ul>
+													<li>2020년 시계 온라인쇼핑몰 창업</li>
+													<li>사이트 관리, 마케팅, 촬영</li>
+													<hr style="margin-right: 70px;">
+													<p> → 쇼핑몰 경험을 살려서, 학교를 다니면서
+														혼자 사업을 시작하였습니다. 동업이 아닌 혼자 역할을 맡아서 하다보니
+														상세페이지제작,촬영 및 마케팅 능력을 키울 수 있었습니다
+														매출이 크게 늘어나면서, 학업에 영향을 끼쳐
+														현재는 가족에게 양도를 생각하고 있습니다.
+													</p>
+											</div>	
+										</div>
+										<!-- <div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
+										</div> -->
+										<!-- <div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+										</div> -->
+										<!-- <div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+										</div> -->
+
+									</div>
+								</section>
+							</article>
+
+						<!-- Contact -->
+							<article id="Study" class="panel">
+								<header style="text-align: center; text-size-adjust:150% ;">
+									<i class="fa-solid fa-box-open" style="font-size: 60px;"><strong h1> Archiving</strong></i>
+								</header>
+									<div class="row" style="text-align: center; margin-top: 10px; padding: auto;">
+										<div class="col-6">
+											<div class="archive">
+												<strong style="color:white">github</strong>
+												<div style="margin-top:20px; text-align: left; " >
+													<a href="https://github.com/" class="image fit" target="_blank" ><img src="/bigData/my/assets/css/images/github-1-960x504.png" alt="깃허브"></a>													
+													<ul style="margin-top: 20px; list-style-type: none; padding-left: 10px;">
+														<li>
+															과거 프로젝트, 프로그램, 앱의 소스코드
+														</li>
+														<li>
+															실무에 나가서도 중요한 깃허브
+														</li>
+														<li>
+															혼자서 코딩 연습을 위해 만들던 코드
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="archive">
+												<strong style="color:white">Tstory</strong>
+												<div style="margin-top: 20px; text-align: left; padding: auto;">
+													<a href="https://rlatjdgh1283.tistory.com/" class="image fit"target="_blank"><img src="/bigData/my/assets/css/images/277BA446586F734808.png" alt="깃허브"></a>
+													<ul style="margin-top: 15px; list-style-type: none; padding-left: 10px;" >
+														<li>나만의 공부 일기장 및 기록</li>
+														<li>지식 공유를 통한 선한 영향력</li>
+														<li>공부하는 습관을 만들어줄 나만의 블로그</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; rlatjdgh1283@naver.com.</li><li class="click" style="cursor: default;">Design by TeamDove<a href="#"></a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'main/ksh/js/jquery.min.js' %}"></script>
+			<script src="{% static 'main/ksh/js/browser.min.js' %}"></script>
+			<script src="{% static 'main/ksh/js/breakpoints.min.js'%}"></script>
+			<script src="{% static 'main/ksh/js/util.js' %}"></script>
+			<script src="{% static 'main/ksh/js/main.js' %}"></script>
+
+	</body>
+</html>

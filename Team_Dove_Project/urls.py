@@ -17,13 +17,16 @@ from xml.etree.ElementInclude import include
 import django
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', include('main.urls')),
     path('accounts/',include('allauth.urls')),
+    path('',include('member_page.urls')),
 ]
 
-
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
