@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-y)^0+n*rkf$u8x&dvgbm5than(ud(ws!0&d=w#y2panw$u(=xn'
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-y)^0+n*rkf$u8x&dvgbm5than(ud(ws!0&d=w#y2panw$u(=xn''')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-y)^0+n*rkf$u8x&dvgbm5than(ud(ws!0&d=w#y2panw$u(=xn')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
@@ -115,7 +115,7 @@ DATABASES = {
         'USER': os.environ.get('SQL_USER', 'user'),
         'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
         'HOST': os.environ.get('SQL_HOST', 'localhost'),
-        'PORT': os.environ.get('SQL_PORT', '5432')
+        'PORT': os.environ.get('SQL_PORT', '3306')
     }
 }
 
